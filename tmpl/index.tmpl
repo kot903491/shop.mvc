@@ -1,0 +1,13 @@
+<div id='content'>
+    <h2>Топ комиксов этой недели</h2>
+    <div id='images'>
+        {% for value in cont %}
+        <div class="{{ value.style }}">
+            <a href='main/good/{{ value.id }}'><img src='{{ value.b_img }}' alt='{{ value.name }}'></a>
+        </div>
+        {% endfor %}
+    </div>
+    <h3>Дорогие друзья!</h3>
+    <p>Перед вами топ-3 комиксов недели.</p>
+    <p>Эти, и многие другие комиксы вы можете приобрести в нашем магазине
+</div>

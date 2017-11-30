@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ style.css }}">
+    {% if style.css_admin %}
+    <link rel="stylesheet" href="{{ style.css_admin }}">
+    {% endif %}
+    {{ ajax.jquery|raw }}
+
+    {% if basket_view %}
+    {{ ajax.basket_func|raw }}
+    {% endif %}
+
+    {% if review %}
+        {{ ajax.review_func|raw }}
+    {% endif %}
+    {% if catalog %}
+        {{ ajax.catalog_func|raw }}
+    {% endif %}
+
+    <title>{{ title }}</title>
+</head>
+<body>
+{% include header %}
+
+{{ content|raw }}
+
+{% include footer %}
+
+</body>
+</html>

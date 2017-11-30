@@ -1,0 +1,564 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+	font-family:Sprite Graffity Shadow;
+	src:url(fonts/Sprite_Graffiti_Shadow.otf);
+}
+@font-face{
+	font-family:Sprite Graffity;
+	src:url(fonts/Sprite_Graffiti.otf);
+}
+@font-face{
+	font-family:CNUTypewriter;
+	src:url(fonts/gtw.otf);
+}
+@font-face{
+	font-family:Vetka;
+	src:url(fonts/Vetka.otf);
+}
+html,body{
+	width: 1366px;
+	height:100%;
+	overflow:hidden;
+}
+body{
+	overflow:auto;
+	font-family:Sprite Graffity Shadow;
+	color:#FFFF00;
+	font-size:20px;
+	letter-spacing:3px;	
+	background:url(img/serious.jpg) no-repeat;
+	background-size:cover;
+	background-position:center center;
+	background-attachment:fixed;
+}
+p{margin:0;
+padding:0;
+}
+header{
+	user-select:none;
+	width:100%;
+	height:100px;	
+}
+header div, nav{
+	height:80px;
+	line-height:80px;
+}
+#logo{
+	float:left;	
+	text-align:center;
+	width:20%;
+	margin:5px 5px 5px 50px;
+}
+#logo img{
+	vertical-align:middle;
+}
+#banner{
+	float:left;
+	font-family:Sprite Graffity;
+	font-size:55px;
+	color:#E1090E;
+	letter-spacing:4px;
+	width:40%;
+	margin:5px 5px 5px 5px;
+}
+nav{
+    height: 45%;
+	float:right;
+	margin:5px 5px 5px 5px;
+	width:32%;
+    font-family:Vetka;
+
+}
+#basket a{
+	color:#FFFF00;
+	width: 100%;
+}
+#basket a:hover{
+	text-decoration: underline;
+	font-family:Vetka;
+	font-size:25px;
+}
+#baskettable{
+	font-family:Vetka;
+	float: left;
+}
+#baskettable td{
+	padding: 2px 5px;
+	border: solid 1px;
+}
+nav a{
+	float:left;
+	height:15px;
+	line-height:15px;
+	width:30%;
+	font-family:Vetka;
+	letter-spacing:2px;
+	font-size:25px;
+	color:#E1090E;
+    text-decoration: none;
+	margin:20px 0 0 0;
+}
+nav a:hover{
+	font-family:Sprite Graffity Shadow;
+	font-size:27px;
+	letter-spacing:2px;
+	font-weight:400;
+}
+#content{
+	position:relative;
+	display:inline-block;
+	padding-top:10px;
+	padding-bottom:25px;
+	width:80%;
+	min-height:60%;
+	margin:0px 10%;
+	background:rgba(41, 41, 41, 0.6);
+	text-align:center;
+}
+#content h2{
+	font-size:24px;
+	font-weight:700;
+}
+#content_black{
+    position:relative;
+    display:inline-block;
+    padding-top:10px;
+    padding-bottom:25px;
+    width:80%;
+    min-height:60%;
+    margin:0px 10%;
+    background:rgba(41, 41, 41, 0.9);
+    text-align:center;
+}
+#content_black h2{
+    font-size:24px;
+    font-weight:700;
+}
+footer {
+	margin-top: 20px;
+	user-select:none;
+	text-align:center;
+	display:block;
+	height: 75px;
+	bottom:0;
+	width:100%;
+	font-family:CNUTypewriter;
+}
+footer p{
+	float:left;
+	color:#E1090E;
+	letter-spacing:3px;
+	text-align: center;
+}
+.social{
+	text-align: center;
+	height:30px;
+	display:inline-block;
+}
+.social img{
+	float:left;
+	width:32px;
+	margin:0px 20px;
+}
+
+/*Страницы*/
+#images{
+	height:400px;
+	width:90%;
+	margin:auto;
+	position:relative;
+}
+.image_bottom{
+	position:relative;
+	background:none;
+	height:280px;
+	width:181px;
+	float:left;
+	box-shadow: 10px 10px 35px rgba(0, 0, 0, .9);
+	margin:4.5% 0 0 200px;
+    z-index: 1000;
+}
+.image_bottom img{
+	height:102%;
+}
+@keyframes image_bottom
+{
+0%   {height:280px;}
+25%  {height:285px;}
+50%  {height:290px;}
+75%  {height:295px;}
+100% {height:300px;z-index:10000;}
+}
+.image_bottom:hover{
+	animation:image_bottom 0.5s 2 alternate;
+}
+	
+.image_top{
+	height:320px;
+	width:215px;
+    background: none;
+	position:absolute;
+	box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, .9);
+	margin:auto;
+	top:50%;
+	margin-top:-175px;
+	left:50%;
+	margin-left:-110px;
+    z-index: 5000;
+}
+.image_top img{
+    margin-left: -1px;
+	height:102%;
+}
+@keyframes image_top
+{
+0%   {height:320px;}
+25%  {height:325px;}
+50%  {height:330px;}
+75%  {height:335px;}
+100% {height:340px;z-index:10000;}
+}
+.image_top:hover{
+	animation:image_top 0.5s 2 alternate;
+}
+.desc{
+	float:left;
+	border-radius:12px;
+	position:relative;
+	font-family:Vetka;
+	font-weight:600;
+	border:0px solid;
+	width:250px;
+	height:380px;
+	margin:5px 0 5px 15px;
+	background: #555555;
+	box-shadow:10px 10px 25px #060606;
+}
+.desc h3, p{
+	margin:0px;
+	padding:3px;
+}
+.cat_img{
+	width:120px;
+	padding:5px;
+	margin:auto;
+	height:52%;
+}
+.cat_img img{
+	max-width:120px;
+}
+.link{
+	width:85%;
+	border-radius:7px;
+	height:10%;
+	position:absolute;
+	bottom:5px;
+	left:50%;
+	background-color: #0f0f0f;
+	margin-left:calc(-85%/2);
+	box-shadow:4px 4px 10px #000000;
+	text-align:center;
+}
+.link:active{
+	box-shadow: inset 4px 4px 10px #333333;
+}
+.link a {
+	height:20px;
+    border: none;
+	margin-top:3%;
+	line-height:100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+	color:#EFF42B;
+}
+
+#cover{
+	width:300px;
+	
+	padding:15px;
+	margin:15px;
+	float:left;
+	border:0px solid;
+}
+#cover img{width:100%;}
+.tabs{
+	user-select:none;
+	float:left;
+	padding:3px;
+	margin:10px;
+	box-shadow:1px 1px 5px 5px #333333;
+	border-radius:5px;
+}
+
+.inset{	
+	display:none;
+	width:60%;
+	padding-top:20px;
+	margin:40px 25px;
+	left:340px;
+	position:absolute;
+	font-family:Vetka;
+	font-size:18px;
+	background:#898989;
+	border-radius:25px;
+	padding:5px;
+	text-align:left;
+	box-shadow:4px 4px 10px 3px #333333;
+}
+#nal{
+	padding-left:20px;
+	display:block;
+	width:50%;
+	float:left;
+	text-align:left;
+}
+
+#maps{
+	float:right;
+	width:60%;
+	height:300px;
+}
+#maps iframe{
+	width:100%;
+	height:100%
+}
+#contacts {
+	padding-left:10px;
+    position: absolute;
+	float:left;
+    left: 0;
+    top: 20px;
+    width: 38%;
+}
+.contactIcon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+.contactWrap {
+	font-family:CNUTypewriter;
+	letter-spacing:2px;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    line-height: 40px;
+}
+
+*{	
+	border:0px solid #000;
+	margin:0;
+	padding:0;
+}
+
+/* Базовый контейнер табов */
+.tabs {
+	width: 700px;
+	padding: 0px;
+	margin: 2% auto;
+}
+/* Стили секций с содержанием */
+.tabs>section {
+	display: none;
+	padding: 15px;
+	border: 1px solid #ddd;
+	text-align: left;
+}
+.tabs>section>p:first-letter{
+	font-size:22px;
+	font-family:Sprite Graffity;
+}
+.tabs>section>p {
+	margin:3px 10px;
+	/* прикрутим анимацию */
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+/* Описываем анимацию свойства opacity */
+.tabs>section li{
+	list-style: none;
+}
+.tabs>section td:first-child{
+	font-weight: bold;
+	font-size: 19px;
+}
+.tabs>section td:last-child{
+	padding-left: 10px;
+}
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/* Прячем чекбоксы */
+.tabs>input {
+	display: none;
+	position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabs>label {
+	display: inline-block;
+	margin: 0 10px -1px;
+	padding: 15px 25px;
+	font-weight: 600;
+	text-align: center;
+	color: #aaa;
+	border: 0px solid #ddd;
+	border-width: 1px 1px 1px 1px;
+	background: #f1f1f1;
+	border-radius: 3px 3px 0 0;
+}
+.tabs>label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+/*.tabs>label[for*="1"]:before {
+	content: "\f19a";
+}
+.tabs>label[for*="2"]:before {
+	content: "\f17a";
+}
+.tabs>label[for*="3"]:before {
+	content: "\f13b";
+}
+.tabs>label[for*="4"]:before {
+	content: "\f13c";
+}*/
+/* Изменения стиля переключателей вкладок при наведении */
+
+.tabs>label:hover {
+	color: #888;
+	cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabs>input:checked+label {
+	color: #555;
+	border-top: 1px solid #009933;
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
+	display: block;
+}
+/* Убираем текст с переключателей
+* и оставляем иконки на малых экранах
+*/
+
+@media screen and (max-width: 680px) {
+	.tabs>label {
+		font-size: 0;
+	}
+	.tabs>label:before {
+		margin: 0;
+		font-size: 18px;
+	}
+}
+/* Изменяем внутренние отступы
+*  переключателей для малых экранов
+*/
+@media screen and (max-width: 400px) {
+	.tabs>label {
+		padding: 15px;
+	}
+}
+
+#review{
+	width: 95%;
+	height: 300px;
+	border: solid 1px;
+	display: block;
+	overflow-y: scroll;
+    text-align: right;
+}
+#review p{
+    text-align: left;
+    font-size: 14px;
+}
+#review span{
+    text-align: right;
+    font-family: Arial;
+    font-size: 10px;
+}
+#review hr{
+    border: 1px solid gray;
+}
+#reviewform form{
+	width: 95%;
+	overflow-y: hidden;
+	border: solid 1px;
+}
+#reviewform textarea{
+	width: 90%;
+	height:120px;
+}
+#reviewform input{
+	width: 70%;
+    height: 25px;
+    margin: 2px;
+}
+
+
+div.button11 {
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+	color:#FFFF00;
+	font-size: 100%;
+	font-weight: 700;
+	text-decoration: none;
+	padding: 2px;
+}
+div.button11:after {
+	content: "В корзину";  /* здесь 6 букв */
+	position: absolute;
+	z-index: -1;
+	top: -2px;
+	bottom: -2px;
+	left: -2px;
+	width: calc(120% + 9*(1em*90/135) - 2px*2*2);  /* где 6*(1em*90/135), где 6 - это 6 букв, 90 - это font-size after, а 135 - это font-size родителя */
+	text-align: right;
+	color: #fff;
+	font-size: 90%;
+	padding: 2px 10px;
+	border-radius: 5px;
+	-webkit-transform: skewX(-10deg);
+	transform: skewX(-10deg);
+	background: linear-gradient(#d4536d, #c61e40) no-repeat 100% 0;
+	background-size: calc(9*(1em*90/100) + 2px) 100%;
+	box-shadow: inset calc(-9*(1em*90/100) - 2px) 0 rgba(255,255,255,0);
+	transition: .3s;
+}
+div.button11:hover:after {
+	box-shadow: inset calc(-6*(1em*90/100) - .5em) 0 rgba(255,255,255,.2);
+}
+div.button11:active:after {
+	background-image: linear-gradient(#c61e40, #d4536d);
+}
+#bas{
+	margin-right: 10px;
+	float: right;
+	font-family:Vetka;
+}
