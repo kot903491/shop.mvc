@@ -22,7 +22,7 @@ trait Singleton
 
     public static function connect(){
         if(self::$single===false){      //если не создавали класс
-            self::$single=new PDO('mysql:host='.SQL_SERVER.';port='.SQL_PORT.';dbname='.dbname,SQL_USER,SQL_PASS);   //то создаем
+            self::$single=new PDO('mysql:host='.SQL_SERVER.';port='.SQL_PORT.';dbname='.dbname,SQL_USER,SQL_PASS,[PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);   //то создаем
         }
         return self::$single;
     }

@@ -23,7 +23,7 @@ class Route
         // получаем имя экшена
         if ( !empty($routes[2]) )
         {
-            $action_name = $routes[2];
+            $page_name = $routes[2];
         }
         if(!empty($routes[3])){
             $id=(int)$routes[3];
@@ -31,16 +31,16 @@ class Route
         // добавляем префиксы
         $model_name = strtolower('Model_'.$controller_name);
         $controller_name = strtolower('Controller_'.$controller_name);
-        $action_name = 'action_'.$action_name;
+        //$action_name = 'action_'.$action_name;
 
         // создаем контроллер
-        $controller = new $controller_name($model_name);
-        $action = $action_name;
+        $controller = new $controller_name($model_name,$page_name,$id);
+        $action = 'action_index';
 
         if(method_exists($controller, $action))
         {
             // вызываем действие контроллера
-            $controller->$action($id);
+            $controller->$action();
         }
         else
         {

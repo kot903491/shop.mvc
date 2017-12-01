@@ -8,10 +8,9 @@
 
 abstract class Model{
     //Базовый класс модели
-    protected function getDefault(){
+    protected $data;
+    public function __construct(){
         include_once CORE_DIR.'default.php';
-        return $data;
+        $this->data=$data;
     }
-    abstract public function getIndex();
-    abstract protected function getPage($id);
 }

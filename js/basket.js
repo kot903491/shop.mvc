@@ -42,7 +42,7 @@ $(document).ready(function(){
 function deleteBasketId(key) {
     $.ajax({
         method: "POST",
-        url: "../js/basket.php",
+        url: "../../js/basket.php",
         data: "basket=deleteBasket&key=" + key,
         success:function (html) {
             $("#baskettable").html(html);

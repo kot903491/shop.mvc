@@ -5,7 +5,7 @@ function getCatalog(amt) {
     var str="amt="+amt;
     $.ajax({
         type:"POST",
-        url:"../js/catalog.php",
+        url:"../../js/catalog.php",
         data:str,
         success:function (html) {
             $("#catalog").html(html);
