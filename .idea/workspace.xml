@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be5e0350-8991-4a64-af6c-19f56606dce1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/core/Route.php" afterPath="$PROJECT_DIR$/core/Route.php" />
-      <change beforePath="$PROJECT_DIR$/core/autoload.php" afterPath="$PROJECT_DIR$/core/autoload.php" />
-      <change beforePath="$PROJECT_DIR$/core/db.php" afterPath="$PROJECT_DIR$/core/DB.php" />
-      <change beforePath="$PROJECT_DIR$/js/basket.php" afterPath="$PROJECT_DIR$/js/basket.php" />
-      <change beforePath="$PROJECT_DIR$/lib/controller_admin.php" afterPath="$PROJECT_DIR$/lib/controller_admin.php" />
       <change beforePath="$PROJECT_DIR$/models/model_admin.php" afterPath="$PROJECT_DIR$/models/model_admin.php" />
-      <change beforePath="$PROJECT_DIR$/models/model_page.php" afterPath="$PROJECT_DIR$/models/model_page.php" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
-      <change beforePath="$PROJECT_DIR$/site.php" afterPath="$PROJECT_DIR$/site.php" />
-      <change beforePath="$PROJECT_DIR$/tmpl/basket.tmpl" afterPath="$PROJECT_DIR$/tmpl/basket.tmpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,12 +44,12 @@
         <entry file="file://$PROJECT_DIR$/models/model_admin.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <caret line="111" column="46" lean-forward="false" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
               <folding>
                 <element signature="n#__construct#0;n#model_admin#0;n#!!top" expanded="false" />
-                <marker date="1512587398373" expanded="true" signature="2428:2488" ph="SELECT hash users" />
-                <marker date="1512587398373" expanded="true" signature="2941:2992" ph="SELECT passw... users" />
-                <marker date="1512587398373" expanded="true" signature="3581:3639" ph="UPDATE users... " />
+                <marker date="1512589384774" expanded="true" signature="2427:2487" ph="SELECT hash users" />
+                <marker date="1512589384774" expanded="true" signature="2940:2991" ph="SELECT passw... users" />
+                <marker date="1512589384774" expanded="true" signature="3580:3638" ph="UPDATE users... " />
               </folding>
             </state>
           </provider>
@@ -261,7 +251,7 @@
       <workItem from="1512029600272" duration="6347000" />
       <workItem from="1512036798408" duration="29208000" />
       <workItem from="1512117737160" duration="10595000" />
-      <workItem from="1512483168505" duration="29460000" />
+      <workItem from="1512483168505" duration="30926000" />
     </task>
     <task id="LOCAL-00001" summary="индекс, каталог, товар, о нас, корзина (сторона юзера) - все работает">
       <created>1512159069343</created>
@@ -298,11 +288,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512582329428</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="поправил косяки в переменных, регистрах, после тестирования на хостинге">
+      <created>1512587592360</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1512587592360</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84987000" />
+    <option name="totallyTimeSpent" value="86453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -339,7 +336,8 @@
     <MESSAGE value="индекс, каталог, товар, о нас, корзина (сторона юзера) - все работает" />
     <MESSAGE value="делаю админку" />
     <MESSAGE value="сделал корзину в админке" />
-    <option name="LAST_COMMIT_MESSAGE" value="сделал корзину в админке" />
+    <MESSAGE value="поправил косяки в переменных, регистрах, после тестирования на хостинге" />
+    <option name="LAST_COMMIT_MESSAGE" value="поправил косяки в переменных, регистрах, после тестирования на хостинге" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -823,12 +821,12 @@
     <entry file="file://$PROJECT_DIR$/models/model_admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="111" column="46" lean-forward="false" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
           <folding>
             <element signature="n#__construct#0;n#model_admin#0;n#!!top" expanded="false" />
-            <marker date="1512587398373" expanded="true" signature="2428:2488" ph="SELECT hash users" />
-            <marker date="1512587398373" expanded="true" signature="2941:2992" ph="SELECT passw... users" />
-            <marker date="1512587398373" expanded="true" signature="3581:3639" ph="UPDATE users... " />
+            <marker date="1512589384774" expanded="true" signature="2427:2487" ph="SELECT hash users" />
+            <marker date="1512589384774" expanded="true" signature="2940:2991" ph="SELECT passw... users" />
+            <marker date="1512589384774" expanded="true" signature="3580:3638" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>

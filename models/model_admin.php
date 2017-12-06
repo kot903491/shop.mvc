@@ -20,7 +20,7 @@ class model_admin extends Model
         if ($this->checkAdmin() || $page=='Login'){
             $page='admin'.$page;
             $result=$this->$page($login,$pass);
-            setcookie('hash',sult_cookie,(time()+3600),'/');
+            setcookie('hash',sult_cookie,(time()+600),'/');
         }
         else{
             $result=$this->adminLoginPage();
@@ -109,7 +109,8 @@ class model_admin extends Model
         $db=DB::connect();
         $hash=md5(md5($rand) . md5(sult_cookie));
         $db->exec('UPDATE users SET hash="'.$hash.'" WHERE login="'.$login.'"');
-        setcookie('hash',sult_cookie,(time()+3600),'/');
+        setcookie('hash',sult_cookie,(time()-1),'/');
+        setcookie('hash',sult_cookie,(time()+600),'/');
         $_SESSION['name']=$login;
         $_SESSION['rand']=$rand;
     }
