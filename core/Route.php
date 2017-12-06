@@ -12,7 +12,7 @@ class Route
     {
         // контроллер и действие по умолчанию
         $controller_name = 'Main';
-        $action_name = 'index';
+        $page_name = 'index';
         $id='';
         $routes = explode('/', $_SERVER['REQUEST_URI']);
         // получаем имя контроллера

@@ -7,5 +7,5 @@
  */
 
 class db{
-    use singleton;
+    use Singleton;
 }

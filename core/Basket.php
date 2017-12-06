@@ -42,4 +42,30 @@ class Basket
         setcookie('basket_product', "", time() - 1, "/");
         header("Location: " . $_SERVER['REQUEST_URI']);
     }
+	
+	public function getBasketTable(){
+    $db=DB::connect();
+    $res=$db->query("SELECT order_product.id_order,`order`.order_date as date, sum(order_product.count) as allcount, sum(order_product.count*product.price) as summ, `order`.order_status as status 
+	FROM order_product 
+inner join product on order_product.id_product=product.id
+inner join `order` on order_product.id_order=`order`.id_order
+group by id_order
+order by date DESC");
+    $table="<table><tr><td>№ заказа</td><td>Дата заказа</td><td>Всего товаров</td><td>Сумма заказа</td><td>Статус</td></tr>";
+    while($value=$res->fetch()) {
+        switch ($value['status']) {
+            case 0:
+                $status = "Выполняется";
+                break;
+            case 1:
+                $status = "Завершен";
+                break;
+        }
+        $table .= "<tr><td>" . $value['id_order'] . "</td><td>". $value['date'] ."<td>" . $value['allcount'] . "</td><td>" . $value['summ'] . "</td><td>$status</td>
+<td><button id='button' onclick='changeOrderStatus(" . $value['id_order'] . ")'>Изменить</button></td></tr>";
+    }
+    $table.="</table>";
+    return $table;
+}
+	
 }
