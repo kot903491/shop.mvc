@@ -23,7 +23,7 @@ if (isset($_POST['basket'])=='getBasketTable'){
     }
 }
 elseif (isset($_POST['id'])){
-    echo setBasket();
+    echo setBasket((int)$_POST['id']);
 }
 else{
     echo getBasket();
@@ -58,27 +58,23 @@ function getBasket(){
     }
 }
 
-function setBasket(){
-    $id = (int)$_POST['id'];
+function setBasket($id){
+    $db = DB::connect();
     if (!isset($_COOKIE['basket_product'])){
-        $mysqli = new mysqli(SQL_SERVER, SQL_USER, SQL_PASS, dbname, SQL_PORT);
-        $res=$mysqli->query("SELECT price FROM product WHERE id=$id");
-        $res=$res->fetch_assoc();
+        $res=$db->query('SELECT price FROM product WHERE id='.$id);
+        $res=$res->fetch();
         $price=$res['price'];
-        $basket[]=array('id'=>$id, 'price'=>$price);
+        $basket[]=['id'=>$id, 'price'=>$price];
         setcookie('basket_product',serialize($basket),time()+1500,"/");
-        $mysqli->close();
         return "<a href='/page/basket/'>В корзине 1 товар на сумму $price тг</a>";
     }
     else{
         $basket=unserialize($_COOKIE['basket_product']);
         setcookie('basket_product',"",time()-1,"/");
-        $mysqli = new mysqli(SQL_SERVER, SQL_USER, SQL_PASS, dbname, SQL_PORT);
-        $res=$mysqli->query("SELECT price FROM product WHERE id=$id");
-        $res=$res->fetch_assoc();
-        $name=$res['name'];
+        $res=$db->query('SELECT price FROM product WHERE id='.$id);
+        $res=$res->fetch();
         $price=$res['price'];
-        $basket[]=array('id'=>$id,'price'=>$price);
+        $basket[]=['id'=>$id,'price'=>$price];
         setcookie('basket_product',serialize($basket),time()+3600,"/");
         $count=count($basket);
         switch ($count){
@@ -99,7 +95,6 @@ function setBasket(){
         }
         $str="<a href='/page/basket/'>В корзине $count $t на сумму $price тг</a>";
         return $str;
-        $mysqli->close();
         }
 }
 function basketTable(){

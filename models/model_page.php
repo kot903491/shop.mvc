@@ -70,11 +70,14 @@ where comics_char.id=$id")->fetch());
         }
     }
     public function getBasket(){
-        if ($_POST['name'] != '' && $_POST['tel'] != '' && $_POST['address'] != '') {
+        if (isset($_POST['k_name']) && isset($_POST['tel']) && isset($_POST['address'])){
+        if ($_POST['k_name'] != '' && $_POST['tel'] != '' && $_POST['address'] != '') {
             Basket::setOrder($_POST);
-        } else {
-            $basket = unserialize($_COOKIE['basket_product']);
-            if (!$basket) {
+        }
+        }
+        
+        else {
+            if (!isset($_COOKIE['basket_product'])) {
                 $msg = "Корзина пуста";
             } else {
                 $msg = "Редактирование и оформление заказа";

@@ -14,8 +14,10 @@ class controller_admin extends Controller
     function __construct($model, $page = '', $id = '')
     {
         parent::__construct($model, $page, $id);
+        if (isset($_POST['login']) && isset($_POST['password'])){
         $this->login=htmlspecialchars(strip_tags($_POST['login']));
         $this->pass=htmlspecialchars(strip_tags($_POST['password']));
+        }
     }
 
     function action_index()
@@ -26,7 +28,7 @@ class controller_admin extends Controller
         }
         else{
             // здесь также разумнее было бы кинуть исключение
-            Route::ErrorPage404();
+            echo "не нашел страницу логин";
         }
     }
 

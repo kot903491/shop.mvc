@@ -20,6 +20,6 @@ spl_autoload_register(function ($ClassName){
         include_once $class_model;
     }
     else{
-        Route::ErrorPage404();
+        echo 'не нашел'.$ClassName;
     }
 });

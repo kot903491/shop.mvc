@@ -6,6 +6,6 @@
  * Time: 20:59
  */
 
-class db{
+class DB{
     use Singleton;
 }

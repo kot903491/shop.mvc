@@ -18,8 +18,9 @@ class model_admin extends Model
 
     function admin($page,$login='',$pass=''){
         if ($this->checkAdmin() || $page=='Login'){
-            $page=admin.$page;
+            $page='admin'.$page;
             $result=$this->$page($login,$pass);
+            setcookie('hash',sult_cookie,(time()+3600),'/');
         }
         else{
             $result=$this->adminLoginPage();
