@@ -1,0 +1,11 @@
+<div id="content">
+    {% for value in cont %}
+    <div class="desc_a">
+        <h3>{{ value.name }}</h3>
+        <div class="cat_img_a"><img src="{{ value.s_img }}"></div>
+        <p>{{ value.s_desk }}</p>
+        <div class="link_a"><a href="{{ url.edit }}{{ value.id }}">Редактировать</a></div>
+        <div class="link_a"><a href="{{ url.delete }}{{ value.id }}">Удалить</a></div>
+    </div>
+    {% endfor %}
+</div>
