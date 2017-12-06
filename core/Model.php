@@ -10,7 +10,7 @@ abstract class Model{
     //Базовый класс модели
     protected $data;
     public function __construct(){
-        include_once CORE_DIR.'default.php';
+        include_once CONFIG_DIR . 'default.php';
         $this->data=$data;
     }
 }

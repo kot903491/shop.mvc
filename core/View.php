@@ -14,12 +14,12 @@ class View
 	$template_file - общий для всех страниц шаблон;
 	$data - массив, содержащий элементы контента страницы. Обычно заполняется в модели.
 	*/
-    function render($data,$tmpl='main.tmpl')
+    function render($data)
     {
         try{
-            $loader = new Twig_Loader_Filesystem(TPL_DIR);
+            $loader = new Twig_Loader_Filesystem($data['path']);
             $twig=new Twig_Environment($loader);
-            $template=$twig->loadTemplate($tmpl);
+            $template=$twig->loadTemplate($data['tmpl']);
             echo $template->render($data);
         }
         catch (Exception $e){

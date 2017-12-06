@@ -15,7 +15,7 @@ function getCatalog($pages){
     $res = $db->query('SELECT count(id) from product');
     $res=$res->fetch(PDO::FETCH_NUM);
     $res=$res[0];
-    if($pages>$res){
+    if($pages>=$res){
         $pages=$res;
         $amtbut='';
     }

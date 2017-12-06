@@ -1,0 +1,21 @@
+<div id="content_black">
+    <div id="auth">
+        <link rel="stylesheet" href="{{ admin.style.auth_css }}">
+        <form method="post" class="login" action="{{ admin.login }}">
+            <p>
+                <label for="login">Логин:</label>
+                <input type="text" name="login" id="login" placeholder="name@example.com" required>
+            </p>
+
+            <p>
+                <label for="password">Пароль:</label>
+                <input type="password" name="password" id="password" placeholder="4815162342"required>
+            </p>
+
+            <p class="login-submit">
+                <button type="submit" class="login-button">Войти</button>
+            </p>
+        </form>
+    </div>
+
+</div>

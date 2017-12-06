@@ -4,9 +4,10 @@ function setReview() {
     var review=$("#text").val();
     var id=$("#id").val();
     var str="name="+nam+"&email="+email+"&review="+review+"&id="+id;
+    alert(str);
     $.ajax({
         type:'POST',
-        url:"../../js/review.php",
+        url:"/js/review.php",
         data:str,
         success:function (data) {
             $('#answer').html(data);
@@ -21,7 +22,7 @@ function getReview(){
     var id=$("#id").val();
     $.ajax({
         type:"POST",
-        url:"../../js/review.php",
+        url:"/js/review.php",
         data:"id="+id,
         success:function (html) {
             $("#review").html(html);

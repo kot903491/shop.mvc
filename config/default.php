@@ -18,13 +18,13 @@ $ajax=array('jquery'=>'<script src="'.JS_DIR.'jquery.js"></script>',
     'basket_func'=>'<script src="'.JS_DIR.'basket.js"></script>',
     'review_func'=>'<script src="'.JS_DIR.'review.js"></script>',
     'catalog_func'=>'<script src="'.JS_DIR.'catalog.js"></script>');
-$basket_view=true;
-$review=false;
-$catalog=false;
+
 $data=array('footer'=>'footer.tmpl',
     'header'=>'header.tmpl',
     'style'=>$style,
     'ajax'=>$ajax,
-    'basket_view'=>$basket_view,
-    'review'=>$review,
-    'catalog'=>$catalog);
+    'basket_view'=>true,
+    'review'=>false,
+    'catalog'=>false,
+    'path'=>TPL_DIR,
+    'tmpl'=>'main.tmpl');

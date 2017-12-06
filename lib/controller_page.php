@@ -20,9 +20,4 @@ class controller_page extends Controller
             Route::ErrorPage404();
         }
     }
-    /*function action_good($id)
-    {
-        $data=$this->model->getPage($id);
-        $this->view->render($data);
-    }*/
 }

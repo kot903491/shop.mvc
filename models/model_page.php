@@ -42,7 +42,7 @@ inner join persons on persons.id_pers=comics_char.id_pers
 where comics_char.id=$id")->fetch());
         $res['b_img']=GALLERY_DIR.$res['b_img'];
         try{
-            $data['review']=true;
+            $this->data['review']=true;
             $loader = new Twig_Loader_Filesystem(TPL_DIR);
             $twig=new Twig_Environment($loader);
             $template=$twig->loadTemplate('goods.tmpl');

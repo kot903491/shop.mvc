@@ -1,17 +1,13 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ style.css }}">
+    {% if admin.style %}
+    <link rel="stylesheet" href="{{ admin.style.css }}">
+    {% endif %}
     {{ ajax.jquery|raw }}
 
-    {% if basket_view %}
-    {{ ajax.basket_func|raw }}
-    {% endif %}
-
-    {% if review %}
-        {{ ajax.review_func|raw }}
-    {% endif %}
-    {% if catalog %}
-        {{ ajax.catalog_func|raw }}
+    {% if admin.basket_admin %}
+        <script src="{{ admin.basket_admin }}"></script>
     {% endif %}
 
     <title>{{ title }}</title>

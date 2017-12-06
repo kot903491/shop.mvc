@@ -108,7 +108,7 @@ function basketTable(){
         $db=DB::connect();
         foreach ($basket as $key => $value) {
             $res = $db->query("SELECT name FROM product WHERE id=" . $value['id']);
-            $res = $res->fetch_assoc();
+            $res = $res->fetch();
             $basket[$key]['name'] = $res['name'];
         }
         $str = "<table><tr><td>Название</td><td>Цена</td></tr>";
