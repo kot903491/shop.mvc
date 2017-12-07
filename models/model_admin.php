@@ -17,7 +17,7 @@ class model_admin extends Model
     }
 
     function admin($page,$login='',$pass=''){
-        if ($this->checkAdmin() || $page=='Login'){
+        if (Admin::checkAdmin() || $page=='Login'){
             $page='admin'.$page;
             $result=$this->$page($login,$pass);
             setcookie('hash',sult_cookie,(time()+600),'/');
@@ -46,7 +46,7 @@ class model_admin extends Model
     }
 
     private function adminLoginPage(){
-        $this->unsetAdmin();
+        Admin::unsetAdmin();
         try{
             $loader = new Twig_Loader_Filesystem(ADMIN_TPL);
             $twig=new Twig_Environment($loader);
@@ -61,71 +61,14 @@ class model_admin extends Model
     }
 
     private function adminLogin($login,$pass){
-        $this->checkCredital($login,$pass);
+        Admin::checkCredital($login,$pass);
     }
 
     private function adminLogout(){
-        $this->unsetAdmin();
+        Admin::unsetAdmin();
         header("Refresh: 5; /");
         echo 'Вы вышли. Через пять секунд вы будете перемещены на главную страницу';
         die();
-    }
-
-    private function checkAdmin(){
-        $check = false;
-        if (isset($_COOKIE['hash']) && $_COOKIE['hash'] === sult_cookie) {
-            if (isset($_SESSION['name']) && isset($_SESSION['rand'])) {
-                $db = DB::connect();
-                $hash = $db->query('SELECT hash FROM users WHERE login="' . $_SESSION['name'].'"');
-                $hash = $hash->fetch(PDO::FETCH_NUM);
-                if (md5(md5($_SESSION['rand']) . md5(sult_cookie)) === $hash[0]) {
-                    $check = true;
-                }
-            }
-        }
-        return $check;
-    }
-
-    private function checkCredital($login,$pass){
-        if ($login!='' && $pass!=''){
-            $sult='12hdfgrtr23123er565hghjmvcdkdjkytrh';
-            $db=DB::connect();
-            $res=$db->query('SELECT password FROM users WHERE login="'.$login.'"');
-            $res=$res->fetch();
-            if ($res['password']==md5($pass).$sult){
-                $this->setAdmin($login,rand(0,500));
-                $str="Авторизация успешна. Вы будете перенаправлены через 5 секунд";
-            }
-            else{
-                $str="Неверный логин или пароль. Попробуйте еще раз через 5 секунд";
-            }
-        }
-        header("Refresh: 5; /admin/");
-        echo $str;
-        die();
-    }
-
-    private function setAdmin($login,$rand){
-        $db=DB::connect();
-        $hash=md5(md5($rand) . md5(sult_cookie));
-        $db->exec('UPDATE users SET hash="'.$hash.'" WHERE login="'.$login.'"');
-        setcookie('hash',sult_cookie,(time()-1),'/');
-        setcookie('hash',sult_cookie,(time()+600),'/');
-        $_SESSION['name']=$login;
-        $_SESSION['rand']=$rand;
-    }
-
-    private function unsetAdmin(){
-            if (isset($_SESSION['name'])){
-                unset($_SESSION['name']);
-            }
-            if (isset($_SESSION['rand'])){
-                unset($_SESSION['rand']);
-            }
-            if(isset($_COOKIE['hash'])){
-                setcookie('hash','',time()-1,'/');
-            }
-        session_destroy();
     }
 	
 	private function adminBasket(){

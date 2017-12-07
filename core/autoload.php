@@ -7,19 +7,17 @@
  */
 
 spl_autoload_register(function ($ClassName){
-    $class_base=CORE_DIR.$ClassName.'.php';
-    $class_child=LIB_DIR.$ClassName.'.php';
-    $class_model=MODEL_DIR.$ClassName.'.php';
-    if (file_exists($class_base)){
-    include_once $class_base;
+
+    $class_dir=[CORE_DIR, LIB_DIR, MODEL_DIR, CLASS_DIR];
+    $s=false;
+    foreach ($class_dir as $value){
+        $f=$value.$ClassName.'.php';
+        if(file_exists($f)){
+            $s=true;
+            include_once $f;
+        }
     }
-    elseif(file_exists($class_child)){
-    include_once $class_child;
-    }
-    elseif(file_exists($class_model)){
-        include_once $class_model;
-    }
-    else{
+    if(!$s){
         echo 'не нашел'.$ClassName;
     }
 });
