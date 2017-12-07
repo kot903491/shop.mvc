@@ -13,7 +13,7 @@ class controller_apage extends Controller
         if(Admin::checkAdmin()) {
             $page='get'.$this->page;
             if (method_exists($this->model, $page)) {
-                $data = $this->model->$page();
+                $data = $this->model->$page($this->id);
                 $this->view->render($data);
             } else {
                 // здесь также разумнее было бы кинуть исключение

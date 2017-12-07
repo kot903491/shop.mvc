@@ -17,6 +17,8 @@ class Admin
                 $hash = $hash->fetch(PDO::FETCH_NUM);
                 if (md5(md5($_SESSION['rand']) . md5(sult_cookie)) === $hash[0]) {
                     $check = true;
+                    setcookie('hash',sult_cookie,(time()-1),'/');
+                    setcookie('hash',sult_cookie,(time()+600),'/');
                 }
             }
         }
