@@ -8,10 +8,10 @@
 $style=['css'=>STYLE_DIR.'admin.css',
     'auth_css'=>STYLE_DIR.'auth.css'];
 
-$url=['add'=>'/admin/add/',
-    'catalog'=>'/admin/catalog/',
-    'basket'=>'/admin/basket/',
-    'sprav'=>'admin/sprav'];
+$url=['add'=>'/apage/add/',
+    'catalog'=>'/apage/catalog/',
+    'basket'=>'/apage/basket/',
+    'sprav'=>'/apage/sprav'];
 
 $admin=['style'=>$style,
     'url'=>$url,

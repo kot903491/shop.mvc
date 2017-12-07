@@ -11,9 +11,7 @@ class model_admin extends Model
     public function __construct()
     {
         parent::__construct();
-        include_once CONFIG_DIR . 'admin.php';
-        $this->data['basket_view'] = false;
-        $this->data['admin']=$admin;
+        $this->adminData();
     }
 
     function admin($page,$login='',$pass=''){
@@ -45,7 +43,7 @@ class model_admin extends Model
         }
     }
 
-    private function adminLoginPage(){
+    public function adminLoginPage(){
         Admin::unsetAdmin();
         try{
             $loader = new Twig_Loader_Filesystem(ADMIN_TPL);
@@ -71,20 +69,5 @@ class model_admin extends Model
         die();
     }
 	
-	private function adminBasket(){
-		try {
-            $loader = new Twig_Loader_Filesystem(ADMIN_TPL);
-            $twig = new Twig_Environment($loader);
-            $template = $twig->loadTemplate('admin_basket.tmpl');
-            $this->data['content'] = $template->render(['getBasketTable'=>Basket::getBasketTable()]);
-            $this->data['header'] = 'admin_header.tmpl';
-            $this->data['path'] = ADMIN_TPL;
-            $this->data['tmpl'] = 'admin_main.tmpl';
-            $this->data['title'] = "Админка-корзина";
-            return $this->data;
-        } catch (Exception $e) {
-            die('ERROR: ' . $e->getMessage());
 
-        }
-	}
 }

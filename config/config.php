@@ -16,6 +16,7 @@ define('SITE_ROOT', '..'._DS);
 define('SITE_DIR','/public/');
 define('CONFIG_DIR',SITE_ROOT.'config'._DS);
 define('CORE_DIR',SITE_ROOT.'core'._DS);
+define('UPLOADED_DIR',SITE_ROOT.'public'._DS.'galery'._DS);
 define('GALLERY_DIR', SITE_DIR.'galery/');
 define('LIB_DIR', SITE_ROOT . 'lib'._DS);
 define('MODEL_DIR',SITE_ROOT.'models'._DS);
